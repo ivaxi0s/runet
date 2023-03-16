@@ -4,7 +4,7 @@
 #SBATCH --mem=48G
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=6
-#SBATCH --array=1-3
+#SBATCH --array=1-1
 #SBATCH --job-name=rsa
 #SBATCH --output=out/%x_%A_%a.out
 #SBATCH --error=out/%x_%A_%a.err
@@ -19,11 +19,11 @@ source ~/rsa_env/bin/activate
 logdir="logs"
 
 # logdir="logs/testing"
-# SLURM_ARRAY_TASK_ID="3"
+SLURM_ARRAY_TASK_ID="3"
 
 exp_no=${SLURM_ARRAY_TASK_ID}
 
-test_args="--num_workers 4 --n_jobs 2"
+test_args="--num_workers 4"
 
 ID="baseline"
 
@@ -50,7 +50,7 @@ ID="baseline"
 # test_args="${test_args} ${rsa_args}"
 
 # 43hrs
-model="unet-attn-rsa"
+# model="unet-attn-rsa"
 
 # model="vnet"
 
@@ -68,7 +68,7 @@ model="unet-attn-rsa"
 # model="unet-plusplus"
 
 # 18hrs
-# model="unet-dy"
+model="unet-dy"
 
 # 12hrs
 # model="segresnet-monai"
@@ -107,4 +107,4 @@ exit
 fi
 
 echo -e "${data_args}"
-python test.py --model ${model} --id ${ID} --path_model ${logdir} --threshold 0.35 ${data_args} ${test_args}
+python get_segmentation_masks.py --model ${model} --id ${ID} --path_model ${logdir} --threshold 0.35 ${data_args} ${test_args}

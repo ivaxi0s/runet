@@ -1,0 +1,8 @@
+model_name,dev_in_ndsc,dev_out_ndsc,eval_in_ndsc
+unet-3d,71.418,54.19,73.668
+unet-attn-rsa,73.362,57.619,74.245
+unet-dy,73.224,53.734,74.875
+unet-monai,68.972,50.617,70.4
+unet-res,72.075,52.067,72.553
+unet-rsa,72.185,54.337,75.041
+unet-tr,72.25,53.414,72.458

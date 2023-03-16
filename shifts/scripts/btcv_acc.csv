@@ -1,0 +1,8 @@
+model_name,Dice
+unet-tr,77.39
+unet-attention,80.67
+unet-monai,76.96
+unet-dy,80.36
+unet-attn-rsa,81.94
+unet-3d,78.23
+unet-res,80.15
