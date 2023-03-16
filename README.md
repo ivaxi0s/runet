@@ -2,6 +2,6 @@
 
 Code for RUNet - Relational UNet for Image Segmentation.
 
-To reproduce, go to the '''README.md''' for each dataset folder. 
+To reproduce, go to the ``README.md`` for each dataset folder. 
 
-'''Dev''' branch has plotting details
+``Dev`` branch has plotting details
