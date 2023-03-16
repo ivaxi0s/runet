@@ -1,4 +1,4 @@
-# runet
+# RUNet
 
 Code for RUNet - Relational UNet for Image Segmentation.
 
