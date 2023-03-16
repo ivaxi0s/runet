@@ -8,7 +8,7 @@
 #SBATCH --job-name=rsa
 #SBATCH --output=out/%x_%A_%a.out
 #SBATCH --error=out/%x_%A_%a.err
-#SBATCH --mail-user=
+#SBATCH --mail-user= 
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
