@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=24:00:00
-#SBATCH --account=rrg-ebrahimi
+#SBATCH --account=
 #SBATCH --mem=48G
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=6
@@ -8,7 +8,7 @@
 #SBATCH --job-name=rsa
 #SBATCH --output=out/%x_%A_%a.out
 #SBATCH --error=out/%x_%A_%a.err
-#SBATCH --mail-user=shivakanth.sujit@gmail.com
+#SBATCH --mail-user=
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
