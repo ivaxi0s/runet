@@ -66,10 +66,12 @@ This repo was built from
   pages={574--584},
   year={2022}
 }
+
+@inproceedings{hatamizadeh2022unetr,
+  title={Relational self-attention: What's missing in attention for video understanding},
+  author={Kim, Manjin and Heeseung Kwon and Chunyu Wang and Suha Kwak and Minsu Cho},
+  booktitle={Advances in Neural Information Processing Systems 34},
+  year={2021}
+}
+
 ```
-
-## References
-[1] Hatamizadeh, Ali, et al. "UNETR: Transformers for 3D Medical Image Segmentation", 2021. https://arxiv.org/abs/2103.10504.
-
-[2] Dosovitskiy, Alexey, et al. "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-", 2020. https://arxiv.org/abs/2010.11929.
