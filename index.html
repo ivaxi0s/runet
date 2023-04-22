@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Relational UNet for Image Segmentation">
+  <meta property="og:image" content="https://github.com/ivaxi0s/runet/blob/gh-pages/static/images/favicon.jpg">
+  <meta property="og:url" content="https://ivaxi0s.github.io/runet/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Relational UNet for Image Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Relational UNet for Image Segmentation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ivaxi0s.github.io/">Ivaxi Sheth</a><sup>12</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://phbraga.com/">Pedro Braga</a><sup>123</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://shivakanthsujit.github.io/">Shivakanth Sujit</a><sup>12</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/sahar-dastani-a2aab0186/">Sahar Dastani</a><sup>12</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://saebrahimi.github.io/">Samira Ebrahimi Kahou</a><sup>12</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ÉTS Montréal,</span>
+            <span class="author-block"><sup>2</sup>Mila, Quebec AI Institute,</span>
+            <span class="author-block"><sup>3</sup>Universidade Federal de Pernambuco,</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2208.10483"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2208.10483"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Tweet Link. -->
+              <!-- <span class="link-block">
+                <a href="https://twitter.com/ShivaSujit/status/1569674176931176448"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Tweet</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ivaxi0s/runet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://drive.google.com/file/d/1ug2Z1GqWDpYIEvdx1m9BVImm0fphhJvK/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Slides</span>
+                  </a>
+                </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="static/images/params.png">
+      <h2 class="subtitle has-text-centered">
+        Comparison of RUNet against recent state-of-the-art model versus model size.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Medical image segmentation is one of the most classic applications of 
+            machine learning in healthcare. A variety of Deep Learning approaches, 
+            mostly based on Convolutional Neural Networks (CNNs), have been 
+            proposed to this end. In particular, the U-shaped networks, UNet have 
+            emerged to exhibit superior performance for medical image segmentation.
+          </p>
+          <p>
+            However, some properties of CNNs, such as the stationary kernels, may
+            limit them from capturing more in-depth visual and spatial relations.
+            The recent success of transformers in both language and vision has 
+            motivated dynamic feature transforms. We propose Relational UNet that
+            introduces relational feature transform to the UNet architecture.
+          </p>
+          <p>
+            RUNet models the dynamics between visual and depth dimensions of a 3D 
+            medical image by introducing  Relational Self-Attention blocks in skip 
+            connections. As the architecture is mainly intended for semantic 
+            segmentation of 3D medical images, we aim to learn their long-range depth relations. 
+          </p>
+          <p>
+            Our method was validated on the Multi-Atlas Labeling Beyond the Cranial
+            Vault (BTCV) dataset for multi-organ segmentation. Robustness to 
+            distribution shifts is a particular challenge  in safety-critical 
+            applications such as medical imaging. We further test our model 
+            performance on realistic distributional shifts on the Shifts 2.0 White
+            Matter Multiple Sclerosis Lesion Segmentation. Experiments show that 
+            our architecture leads to superior performance, particularly in the Out-of-Domain setting.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <img src="static/images/btcv.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <center>
+            <img src="static/images/shifts_tables.png">
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <h2 class="title is-4">SHIFTS</h2>
+          <p>
+          Qualitative comparison of segmentation of a slice of a Shifts 2.0 image. Our model RUNet, has the best performance, evident from the qualitative comparision.
+          </p>
+          <center>
+            <img src="static/images/together.png">
+          </center>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{sheth2023relational,
+      title   = {Relational UNet for Image Segmentation},
+      author  = {Ivaxi Sheth and Pedro H. M. Braga and Shivakanth Sujit and Samira Ebrahimi Kahou},
+      year    = {2022},
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="content">
+        <p>
+          Website template is borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
